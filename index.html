@@ -1,31 +1,121 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Home</title>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Coding Quiz" />
-<meta name="author" content="Dawson Bolen" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=DM+Sans:wght@400;500&family=Flavors&family=Lato:wght@400;700&family=Oswald:wght@200;300;400;500;600;700&family=Readex+Pro&family=Roboto+Slab&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/reset.css">
-<link rel="stylesheet" href="assets/style.css">
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coding Quiz" />
+    <meta name="author" content="Dawson Bolen" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=DM+Sans:wght@400;500&family=Flavors&family=Lato:wght@400;700&family=Oswald:wght@200;300;400;500;600;700&family=Readex+Pro&family=Roboto+Slab&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/reset.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
-<header>
-    <h1>Coding Quiz</h1>
-    <h2>Time: <span id="timer"></span></h2>
-</header>
-<main>
-<section id="section-1">
-   
-</section>
+    <header>
+        <h1>Coding Quiz</h1>
+    </header>
+    <main>
+        <section class="section-1 hide">
+            <div id="time">
+                <img id="clock-pic" src="assets/images/clock.png" width="50px" height="55px">
+                <h2 class="timer" style="text-align:center;"></h2>
+            </div>
+        </section>
+        <div id="start-page">
+            <h2>Welcome to your coding quiz</h2>
+            <h6>You have exactly 1 minute to complete this quiz. Time will be added for each correct answer and time
+                will be deducted for each incorrect answer. Press Start whenever you are ready. Good luck!</h6>
+            <button class="start-button">Start</button>
+        </div>
+        <section id="section-2" class="hide">
+            <h2 class="rightOrWrongLabel"></h2>
+        </section>
+        <section id="quiz-body" class="hide">
+            <div class="question hide" id="question-1">
+                <h3>What is an API?</h3>
+                <div id="Q1">
+                    <label for="1-A"><input type="radio" name="q1" id="1-A" value="1-A"><strong>A:</strong> An API is a
+                        type of JavaScript Function.</label> </br>
+                    <label for="1-B"><input type="radio" name="q1" id="1-B" value="1-B"><strong>B:</strong> API stands
+                        for Application Programing Interface</label> </br>
+                    <label for="1-C"><input type="radio" name="q1" id="1-C" value="1-C"><strong>C:</strong> API's allow
+                        for multiple programming languages to interect with one another</label> </br>
+                    <label for="1-D"><input class="correct-answer" type="radio" name="q1" id="1-D" value="1-D" data-isCorrect = "true"><strong>D:</strong> Both B and C are correct</label> </br>
+                </div>
+                <button type="button" class="submitanswer">Submit</button>
+            </div>
+            <div class="question hide" id="question-2">
+                <h3>What could you use to grab an html element with a class of light in JavaScript?</h3>
+                <div id="Q2">
+                    <label for="2-A"><input type="radio" class="correct-answer" name="q2" id="2-A" value="2-A"><strong>A:</strong>
+                        document.querySelector('.light');</label> </br>
+                    <label for="2-B"><input type="radio" name="q2" id="2-B" value="2-B"><strong>B:</strong>
+                        document.getElementByID('#light');</label> </br>
+                    <label for="2-C"><input type="radio" name="q2" id="2-C" value="2-C"><strong>C:</strong>
+                        document.getElementByClassName('.light');</label> </br>
+                    <label for="2-D"><input type="radio" name="q2" id="2-D" value="2-D"><strong>D:</strong> Both A and C
+                        are correct</label> </br>
+                </div>
+                <button type="submit" class="submitanswer">Submit</button>
+            </div>
+            <div class="question hide" id="question-3">
+                <h3>What is an API?</h3>
+                <div id="Q3">
+                    <label for="3-A"><input type="radio" name="q3" id="3-A" value="3-A"><strong>A:</strong> An API is a
+                        type of JavaScript Function.</label> </br>
+                    <label for="3-B"><input type="radio" name="q3" id="3-B" value="3-B"><strong>B:</strong> API stands
+                        for Application Programing Interface</label> </br>
+                    <label for="3-C"><input type="radio" name="q3" id="3-C" value="3-C"><strong>C:</strong> API's allow
+                        for multiple programming languages to interect with one another</label> </br>
+                    <label for="3-D"><input type="radio" name="q3" id="3-D" value="3-D"><strong>D:</strong> Both B and C
+                        are correct</label> </br>
+                </div>
+                <button type="submit" class="submitanswer">Submit</button>
+            </div>
+            <div class="question hide" id="question-4">
+                <h3>What is an API?</h3>
+                <div id="Q4">
+                    <label for="4-A"><input type="radio" name="q4" id="4-A" value="4-A"><strong>A:</strong> An API is a
+                        type of JavaScript Function.</label> </br>
+                    <label for="4-B"><input type="radio" name="q4" id="4-B" value="4-B"><strong>B:</strong> API stands
+                        for Application Programing Interface</label> </br>
+                    <label for="4-C"><input type="radio" name="q4" id="4-C" value="4-C"><strong>C:</strong> API's allow
+                        for multiple programming languages to interect with one another</label> </br>
+                    <label for="4-D"><input type="radio" name="q4" id="4-D" value="4-D"><strong>D:</strong> Both B and C
+                        are correct</label> </br>
+                </div>
+                <button type="submit" class="submitanswer">Submit</button>
+            </div>
+            <div class="question hide" id="question-5">
+                <h3>What is an API?</h3>
+                <div id="Q5">
+                    <label for="5-A"><input type="radio" name="q5" id="5-A" value="5-A"><strong>A:</strong> An API is a
+                        type of JavaScript Function.</label> </br>
+                    <label for="5-B"><input type="radio" name="q5" id="5-B" value="5-B"><strong>B:</strong> API stands
+                        for Application Programing Interface</label> </br>
+                    <label for="5-C"><input type="radio" name="q5" id="5-C" value="5-C"><strong>C:</strong> API's allow
+                        for multiple programming languages to interect with one another</label> </br>
+                    <label for="5-D"><input type="radio" name="q5" id="5-D" value="5-D"><strong>D:</strong> Both B and C are correct</label> </br>
+                </div>
+                <button type="submit" class="submit-quiz">Submit</button>
+            </div>
+        </section>
+        <div class="finished-screen hide">
+            <h1 class="you-are-finished"></h1>
+            <h2>Your final score is: <span class="final-score"></span></h2>
+            <h2>top score: <span class="top-score"></span></h2>
+        </div>
+    </main>
+    <footer>
 
-</main>
-<footer>
-
-</footer>
-<script src="assets/script.js"></script>
+    </footer>
+    <script src="assets/script.js"></script>
 </body>
+
 </html>

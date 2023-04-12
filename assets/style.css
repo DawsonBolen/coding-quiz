@@ -1,17 +1,149 @@
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
+    color:black;
   }
 
   p {
     font-family: 'Oswald', sans-serif;
+    color:black;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 40px;
   }
 
   header {
-    background-color: lightgray;
-    display: flex;
-    justify-content: space-between;
+    background-color: lightgray;;
     padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+ 
+  #clock-pic {
+    margin-right: 10px;
+  }
+
+
+  /*
+  .question {
+    display: none;
+  }
+
+   label {
+    background-color: blue;
+    padding: 10px 5px;
+  }
+*/
+
+    input {
+    margin: 10px 0;
+    font-family: 'Oswald', sans-serif;
   }
 
  
+ 
+  #quiz-body {
+    width: 50%;
+    margin: 20px auto;
+  }
+
+  .right-or-wrong {
+    font-family: 'Oswald', sans-serif;
+  }
+
+  .submitanswer {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 50px;
+    background-color: blue;
+    color: white;
+  }
+
+  .submitanswer:hover {
+    background-color: blueviolet;
+  }
+
+  .submit-quiz {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 50px;
+    background-color: blue;
+    color: white;
+  }
+
+  .submit-quiz:hover{
+    background-color: blueviolet;
+  }
+
+  #section-2 {
+    text-align: center;
+  }
+
+  #start-page {
+    width: 60%;
+    Margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #start-page h2 {
+    margin-bottom: 50px;
+  }
+
+  .start-button {
+    width: 300px;
+    align-self: center;
+    margin-top: 10px;
+  }
+
+  /*
+  .question {
+    display: none;
+  }
+
+  .next {
+  display: none;
+ }
+*/
+
+
+
+
+ .finish {
+  display: none;
+ }
+
+ #time {
+  display: none;
+ }
+
+ 
+ .hide {
+  display: none !important;
+}
+
+
+
+
+/*Media querries*/
+  @media screen and (max-width: 576px){
+    #quiz-body{
+      width: 80%;
+    }
+  }
