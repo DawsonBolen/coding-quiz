@@ -4,13 +4,21 @@ var timer;
 var secondsLeft = 60;
 var theQuestions = document.querySelectorAll('.question');
 let currentQuestionIndex = 0; // index of the current question
+//var correctAnswer = document.querySelectorAll('.correct-answer');
+//let currentAnswerIndex = 0;
 var startQuiz = document.querySelector(".start-button");
 let nextButton = document.querySelector(".submitanswer"); // select the submit button when rendering the current question 
 //the last question had a different button since the test should be over after this and results should be displayed
 var submitQuizButton = document.querySelector(".submit-quiz");
 let rightOrWrong = document.querySelector(".rightOrWrongLabel");
+//var currentAnswer = correctAnswer[currentAnswerIndex];
 // checkanswer function 
 let score = 0;
+
+
+
+
+var tellUserResult = document.querySelector('.section-2');
 
 var topTimeDisplay = document.querySelector('.section-1');
 
@@ -21,11 +29,14 @@ startQuiz.addEventListener("click", function () {
     theTime.setAttribute("style", "display: flex; align-items: center;");
     var startScreen = document.querySelector("#start-page");
     startScreen.classList.add('hide');
+    tellUserResult.classList.add('hide');
     var quizBody = document.querySelector('#quiz-body');
     quizBody.classList.remove('hide');
     setTime();
     renderCurrentQuestion();
 });
+
+//make sure to account for if they press next without selecting an answer
 
 function renderCurrentQuestion() {
     var currentQuestion = theQuestions[currentQuestionIndex];
@@ -33,7 +44,9 @@ function renderCurrentQuestion() {
 
     if (currentQuestionIndex > 0) {
         var previousQuestion = theQuestions[currentQuestionIndex - 1];
-        previousQuestion.classList.add('hide');
+        //previousQuestion.classList.add('hide');
+        //previousQuestion
+        previousQuestion.innerHTML = '';
     }
 
     var submitButton = currentQuestionIndex === 4 ? currentQuestion.querySelector('.submit-quiz') : currentQuestion.querySelector('.submitanswer');
@@ -45,18 +58,27 @@ function validateAnswer() {
     // check if right or wrong
     // based on validity add penalty
     let selected = document.querySelector('input[type="radio"]:checked'); 
-    var correctAnswer = document.querySelector('.correct-answer');
+    tellUserResult.classList.remove('hide');
+    
+    if (selected.value === 'correct') {
+        secondsLeft += 10;
+         score = score + 10;
+        tellUserResult.setAttribute("style", "background-color: green;");
+        rightOrWrong.textContent = 'Correct';
+  
 
-    if (selected === correctAnswer) {
-        console.log("you got it right");
     } else {
-        console.log("wrong");
+        secondsLeft -= 10;
+        tellUserResult.setAttribute("style", "background-color: red;");
+        rightOrWrong.textContent = 'Incorrect';
     }
 
     // increase the currentQuestion index
+   
 
     if (currentQuestionIndex < 4) {
         currentQuestionIndex++;
+
         renderCurrentQuestion();
     }
     else {
@@ -69,9 +91,13 @@ function validateAnswer() {
 function stopQuiz() {
    var scoresPage = document.querySelector('.finished-screen');
    var quizBody = document.querySelector('#quiz-body');
+   var scoreDisplay = document.querySelector('.final-score');
    topTimeDisplay.classList.add('hide');
     quizBody.classList.add('hide');
    scoresPage.classList.remove('hide');
+   
+   scoreDisplay.textContent = score;
+
    
     // stop the timer 
     // show the highscores page
@@ -104,31 +130,6 @@ function sendMessage() {
 
 
 
-//create functions for if the answer is right and if it is wrong
-
-//answer is right function: needs to add time to timer and i want it to give the answer field a green border and notify correct
-
-
-//answer is wrong: will subtract time, give the answer field a red border, and notifies that the user got it wrong
-
-
-// then these if statements will determine if the answer is correct or not and determine which function to call
-/*
-if (currentQuestion === 1) {
-    if (selected.value === "1-D") {
-        //call answer is right function
-    } else {
-        //call answer is wrong function
-    }
-}
-
-
-nextButton.addEventListener('click', () => {
-    let selected = document.querySelector('input[type="radio"]:checked');
-    rightOrWrong.innerText = selected.parentElement.textContent;
-});
-
-*/
 
 
 

@@ -28,80 +28,68 @@
             </div>
         </section>
         <div id="start-page">
-            <h2>Welcome to your coding quiz</h2>
-            <h6>You have exactly 1 minute to complete this quiz. Time will be added for each correct answer and time
-                will be deducted for each incorrect answer. Press Start whenever you are ready. Good luck!</h6>
+            <h2 id="welcome">Welcome to your coding quiz</h2>
+            <p>This is a timed quiz which will begin once you press start. There are 5 questions for a total of 50 points. You have exactly 1 minute to complete this quiz. Time will be added for each correct answer and time will be deducted for each incorrect answer. Press Start whenever you are ready. Good luck!</p>
             <button class="start-button">Start</button>
         </div>
-        <section id="section-2" class="hide">
+        <section class="section-2 hide">
             <h2 class="rightOrWrongLabel"></h2>
         </section>
         <section id="quiz-body" class="hide">
             <div class="question hide" id="question-1">
                 <h3>What is an API?</h3>
                 <div id="Q1">
-                    <label for="1-A"><input type="radio" name="q1" id="1-A" value="1-A"><strong>A:</strong> An API is a
+                   <label class="labl" for="1-A"><input type="radio" name="q1" id="1-A" value="1-A"><strong>A:</strong> An API is a
                         type of JavaScript Function.</label> </br>
-                    <label for="1-B"><input type="radio" name="q1" id="1-B" value="1-B"><strong>B:</strong> API stands
+                    <label class="labl" for="1-B"><input type="radio" name="q1" id="1-B" value="1-B"><strong>B:</strong> API stands
                         for Application Programing Interface</label> </br>
-                    <label for="1-C"><input type="radio" name="q1" id="1-C" value="1-C"><strong>C:</strong> API's allow
+                    <label class="labl" for="1-C"><input type="radio" name="q1" id="1-C" value="1-C"><strong>C:</strong> API's allow
                         for multiple programming languages to interect with one another</label> </br>
-                    <label for="1-D"><input class="correct-answer" type="radio" name="q1" id="1-D" value="1-D" data-isCorrect = "true"><strong>D:</strong> Both B and C are correct</label> </br>
+                    <label class="labl" for="1-D"><input  type="radio" name="q1" id="1-D" value="correct" data-isCorrect = "true"><strong>D:</strong> Both B and C are correct</label> </br>
                 </div>
                 <button type="button" class="submitanswer">Submit</button>
             </div>
             <div class="question hide" id="question-2">
                 <h3>What could you use to grab an html element with a class of light in JavaScript?</h3>
                 <div id="Q2">
-                    <label for="2-A"><input type="radio" class="correct-answer" name="q2" id="2-A" value="2-A"><strong>A:</strong>
+                    <label class="labl" for="2-A"><input type="radio" name="q2" id="2-A" value="correct"><strong>A:</strong>
                         document.querySelector('.light');</label> </br>
-                    <label for="2-B"><input type="radio" name="q2" id="2-B" value="2-B"><strong>B:</strong>
+                    <label class="labl" for="2-B"><input type="radio" name="q2" id="2-B" value="2-B"><strong>B:</strong>
                         document.getElementByID('#light');</label> </br>
-                    <label for="2-C"><input type="radio" name="q2" id="2-C" value="2-C"><strong>C:</strong>
+                    <label class="labl" for="2-C"><input type="radio" name="q2" id="2-C" value="2-C"><strong>C:</strong>
                         document.getElementByClassName('.light');</label> </br>
-                    <label for="2-D"><input type="radio" name="q2" id="2-D" value="2-D"><strong>D:</strong> Both A and C
+                    <label class="labl" for="2-D"><input type="radio" name="q2" id="2-D" value="2-D"><strong>D:</strong> Both A and C
                         are correct</label> </br>
                 </div>
                 <button type="submit" class="submitanswer">Submit</button>
             </div>
             <div class="question hide" id="question-3">
-                <h3>What is an API?</h3>
+                <h3>What is the proper way to declare an array?</h3>
                 <div id="Q3">
-                    <label for="3-A"><input type="radio" name="q3" id="3-A" value="3-A"><strong>A:</strong> An API is a
-                        type of JavaScript Function.</label> </br>
-                    <label for="3-B"><input type="radio" name="q3" id="3-B" value="3-B"><strong>B:</strong> API stands
-                        for Application Programing Interface</label> </br>
-                    <label for="3-C"><input type="radio" name="q3" id="3-C" value="3-C"><strong>C:</strong> API's allow
-                        for multiple programming languages to interect with one another</label> </br>
-                    <label for="3-D"><input type="radio" name="q3" id="3-D" value="3-D"><strong>D:</strong> Both B and C
-                        are correct</label> </br>
+                    <label class="labl" for="3-A"><input type="radio" name="q3" id="3-A" value="3-A"><strong>A:</strong> Const cars = {honda, ford, chevy};</label> </br>
+                    <label class="labl" for="3-B"><input type="radio" name="q3" id="3-B" value="3-B"><strong>B:</strong> Const cars = ['honda' 'ford' 'chevy'];</label> </br>
+                    <label class="labl" for="3-C"><input type="radio"  name="q3" id="3-C" value="correct"><strong>C:</strong> Const cars = ['honda', 'ford', 'chevy'];</label> </br>
+                    <label class="labl" for="3-D"><input type="radio" name="q3" id="3-D" value="3-D"><strong>D:</strong> Const cars = ['honda, ford, chevy'];</label> </br>
                 </div>
                 <button type="submit" class="submitanswer">Submit</button>
             </div>
             <div class="question hide" id="question-4">
-                <h3>What is an API?</h3>
+                <h3>If you want to grab all elements with a class name of dark what would you use to do that?</h3>
                 <div id="Q4">
-                    <label for="4-A"><input type="radio" name="q4" id="4-A" value="4-A"><strong>A:</strong> An API is a
-                        type of JavaScript Function.</label> </br>
-                    <label for="4-B"><input type="radio" name="q4" id="4-B" value="4-B"><strong>B:</strong> API stands
-                        for Application Programing Interface</label> </br>
-                    <label for="4-C"><input type="radio" name="q4" id="4-C" value="4-C"><strong>C:</strong> API's allow
-                        for multiple programming languages to interect with one another</label> </br>
-                    <label for="4-D"><input type="radio" name="q4" id="4-D" value="4-D"><strong>D:</strong> Both B and C
-                        are correct</label> </br>
+                    <label class="labl" for="4-A"><input type="radio" name="q4" id="4-A" value="4-A"><strong>A:</strong> document.querySelector('.dark')</label> </br>
+                    <label class="labl" for="4-B"><input type="radio" name="q4" id="4-B" value="4-B"><strong>B:</strong> document.getElementByClassName('dark')</label> </br>
+                    <label class="labl" for="4-C"><input type="radio" name="q4" id="4-C" value="correct"><strong>C:</strong> document.querySelectorAll('.dark')</label> </br>
+                    <label class="labl" for="4-D"><input type="radio" name="q4" id="4-D" value="4-D"><strong>D:</strong> All of the above are correct</label> </br>
                 </div>
                 <button type="submit" class="submitanswer">Submit</button>
             </div>
             <div class="question hide" id="question-5">
-                <h3>What is an API?</h3>
+                <h3>How could you declare a variable with the name score?</h3>
                 <div id="Q5">
-                    <label for="5-A"><input type="radio" name="q5" id="5-A" value="5-A"><strong>A:</strong> An API is a
-                        type of JavaScript Function.</label> </br>
-                    <label for="5-B"><input type="radio" name="q5" id="5-B" value="5-B"><strong>B:</strong> API stands
-                        for Application Programing Interface</label> </br>
-                    <label for="5-C"><input type="radio" name="q5" id="5-C" value="5-C"><strong>C:</strong> API's allow
-                        for multiple programming languages to interect with one another</label> </br>
-                    <label for="5-D"><input type="radio" name="q5" id="5-D" value="5-D"><strong>D:</strong> Both B and C are correct</label> </br>
+                    <label class="labl" for="5-A"><input type="radio" name="q5" id="5-A" value="5-A"><strong>A:</strong> var score = 0;</label> </br>
+                    <label class="labl" for="5-B"><input type="radio" name="q5" id="5-B" value="5-B"><strong>B:</strong> let score = 0;</label> </br>
+                    <label class="labl" for="5-C"><input type="radio" name="q5" id="5-C" value="5-C"><strong>C:</strong> const score = 0;</label> </br>
+                    <label class="labl" for="5-D"><input type="radio" name="q5" id="5-D" value="correct"><strong>D:</strong> All the above are correct</label> </br>
                 </div>
                 <button type="submit" class="submit-quiz">Submit</button>
             </div>

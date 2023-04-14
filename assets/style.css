@@ -7,19 +7,29 @@ h1, h2, h3, h4, h5, h6 {
   p {
     font-family: 'Oswald', sans-serif;
     color:black;
+    font-weight: 400;
+    max-width: 600px;
+    align-self: center;
   }
 
   h1 {
     font-size: 50px;
+    color: white;
   }
 
   h2 {
     font-size: 40px;
   }
 
+  h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+
   header {
-    background-color: lightgray;;
-    padding: 40px 20px;
+    background-color: #096889;
+    padding: 20px 0;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -47,46 +57,56 @@ h1, h2, h3, h4, h5, h6 {
   }
 */
 
-    input {
-    margin: 10px 0;
-    font-family: 'Oswald', sans-serif;
-  }
+ 
 
  
  
   #quiz-body {
-    width: 50%;
-    margin: 20px auto;
+    width: 75%;
+    margin: 0 auto;
+    background-color:#e6e6e6;
+    padding: 30px 40px 80px 40px;
+    display: flex;
+    flex-direction: column;
   }
+
+ .labl {
+  margin-top: 10px;
+  align-self: center;
+ }
 
   .right-or-wrong {
     font-family: 'Oswald', sans-serif;
   }
 
+
   .submitanswer {
-    width: 100px;
+    width: 80%;
     height: 35px;
+    border-radius: 2px;
     border: none;
-    border-radius: 50px;
-    background-color: blue;
+    background-color: #00bc14;
     color: white;
+   margin-top: 20px;
   }
 
   .submitanswer:hover {
-    background-color: blueviolet;
+    background-color: #890968;
   }
 
   .submit-quiz {
-    width: 100px;
+    width: 80%;
     height: 35px;
     border: none;
     border-radius: 50px;
-    background-color: blue;
+    background-color: #00bc14;
     color: white;
+    margin-top: 20px;
+    
   }
 
   .submit-quiz:hover{
-    background-color: blueviolet;
+    background-color: #890968;
   }
 
   #section-2 {
@@ -95,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 
   #start-page {
     width: 60%;
-    Margin: 20px auto;
+    Margin: 200px auto 20px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,9 +127,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .start-button {
-    width: 300px;
+    width: 40%;
+    height: 35px;
+    border: none;
+    border-radius: 50px;
+    background-color: #00bc14;
+    color: white;
+    margin-top: 40px;
     align-self: center;
-    margin-top: 10px;
+  }
+
+  .start-button:hover {
+    background-color: #890968;
   }
 
   /*
@@ -123,7 +152,26 @@ h1, h2, h3, h4, h5, h6 {
 */
 
 
+label {
+  
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: white;
+  border-radius: 20px;
+  font-family: 'Oswald', sans-serif;
+  width: 80%;
+  margin: 0 auto;
+}
 
+input {
+  margin: 10px 5px;
+ 
+}
+
+
+.finished-screen {
+  text-align: center;
+}
 
  .finish {
   display: none;
@@ -132,6 +180,18 @@ h1, h2, h3, h4, h5, h6 {
  #time {
   display: none;
  }
+
+ .rightOrWrongLabel {
+  color: white;
+ }
+
+ .section-2 {
+  width: 75%;
+  margin: 20px auto 0 auto;
+  text-align: center;
+  padding: 10px;
+  }
+  
 
  
  .hide {
