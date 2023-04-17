@@ -175,7 +175,6 @@ function displayPastScores() {
 returnButton.addEventListener("click", restartQuiz);
 
 function restartQuiz() {
-    preventDefault();
     var scoresPage = document.querySelector('.finished-screen');
     scoresPage.classList.add('hide');
     startScreen.classList.remove('hide');
