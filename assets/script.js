@@ -18,14 +18,13 @@ let score = 0;
 var nextQuestion = document.querySelector('#next-question-button');
 
 var nameButton = document.querySelector('.name-button');
-var addName = document.querySelector('#submitname');
 
 var tellUserResult = document.querySelector('.section-2');
 
 var topTimeDisplay = document.querySelector('.section-1');
 
 var returnButton = document.querySelector('.return-button');
-
+var startScreen = document.querySelector("#start-page");
 //Starts quiz with start button and get the timer to set
 startQuiz.addEventListener("click", function () {
     topTimeDisplay.classList.remove('hide');
@@ -125,6 +124,8 @@ function stopQuiz() {
     // show the highscores page
 }
 
+
+
 //rightOrWrong.innerText = selected.parentElement.textContent;
 //time function
 
@@ -171,112 +172,17 @@ function displayPastScores() {
 }
 
 
+returnButton.addEventListener("click", restartQuiz);
 
-
-
-
-
-
-
-
-
-/*
-nameButton.addEventListener("click", function(event){
-    event.preventDefault();
-    var li = document.createElement("li");
-    li.textContent = localStorage.getItem(player) + localStorage.getItem(score);
-
-    pastScores.appendChild(li);
-    
-});
-
-var scores = [];
-var pastScores = document.querySelector('#scores-list');
-
-var nameForm = document.querySelector('#name-form');
-
-var playersName = document.querySelector('#thename');
-
-
-nameButton.addEventListener("click", function(){
-    const name = document.querySelector('#thename');
-    const username = localStorage.getItem('username');
-    
-//store the users name and score in local storage.
-
-
-    name.value = username;
-
-    name.addEventListener("submit", (event) => {
-        localStorage.setItem('username', (e).target.value)
-    });
-
-    pastScores.textContent = json.stringify(username) + score;
-
-
-});
-
-
+function restartQuiz() {
+    var scoresPage = document.querySelector('.finished-screen');
+    scoresPage.classList.add('hide');
+    startScreen.classList.remove('hide');
 }
 
-function renderScores() {
-    // Clear todoList element and update todoCountSpan
-    pastScores.innerHTML = "";
-  
-    // Render a new li for each todo
-    for (var i = 0; i < scores.length; i++) {
-      var theScore = scores[i];
-  
-      var li = document.createElement("li");
-      li.textContent = theScore;
-      li.setAttribute("data-index", i);
-  
-      var button = document.createElement("button");
-      button.textContent = "Complete ✔️";
-  
-      li.appendChild(button);
-      pastScores.appendChild(li);
-    }
-  }
-
-  function init() {
-    // Get stored todos from localStorage
-    var storedScores = JSON.parse(localStorage.getItem("scores"));
-  
-    // If todos were retrieved from localStorage, update the todos array to it
-    if (storedScores !== null) {
-      scores = storedScores;
-    }
-  
-    // This is a helper function that will render todos to the DOM
-    renderScores();
-  }
-  
-
-function storeScores() {
-    // Stringify and set key in localStorage to todos array
-    localStorage.setItem("scores", JSON.stringify(scores));
-  }
 
 
 
 
-  nameButton.addEventListener("submit", function(event) {
-  event.preventDefault();
 
-  var username = playersName.value.trim();
 
-  // Return from function early if submitted todoText is blank
-  if (username === "") {
-    return;
-  }
-
-  // Add new todoText to todos array, clear the input
-  scores.push(username);
-  playersName.value = "";
-
-  // Store updated todos in localStorage, re-render the list
-  storeScores();
-  renderScores()
-});
-*/
