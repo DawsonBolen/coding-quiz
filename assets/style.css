@@ -135,6 +135,10 @@ h1, h2, h3, h4, h5, h6 {
    margin-top: 40px;
   }
 
+  .return-button:hover {
+    background-color: #890968;
+  }
+
   .submitanswer {
     width: 80%;
     height: 35px;
@@ -184,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   #next-question-button:hover {
-    background-color: #890968;
+    background-color: #00bc14;
   }
 
   

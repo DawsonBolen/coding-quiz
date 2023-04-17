@@ -79,7 +79,7 @@ function validateAnswer() {
     if (selected.value === 'correct') {
         secondsLeft += 10;
          score = score + 10;
-         selectLabel.setAttribute("style", "background-color: green;");
+         selectLabel.setAttribute("style", "background-color: #00bc14; color: white;");
        
     } else {
         secondsLeft -= 10;
