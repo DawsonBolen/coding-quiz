@@ -57,7 +57,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 */
 
- 
+.question {
+  text-align: center;
+}
 
  
  
@@ -79,6 +81,46 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
   }
 
+  form {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    align-self: center;
+    align-items: center;
+    margin: 20px;
+  }
+
+  #namlabl {
+    background-color: #096889;
+    border-radius: 0;
+    padding: 0;
+    color: white;
+  }
+ 
+
+  #pasty {
+    margin-top: 60px;
+  }
+
+  .name-button {
+    align-self: center;
+    width: 60px;
+    height: 25px;
+    border-radius: 2px;
+    border: none;
+    background-color: #00bc14;
+    color: white;
+  }
+
+  .return-button {
+    width: 80%;
+    height: 35px;
+    border-radius: 2px;
+    border: none;
+    background-color: #00bc14;
+    color: white;
+   margin-top: 20px;
+  }
 
   .submitanswer {
     width: 80%;
@@ -113,6 +155,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
   }
 
+
   #start-page {
     width: 60%;
     Margin: 200px auto 20px auto;
@@ -142,9 +185,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /*
-  .question {
-    display: none;
-  }
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 
   .next {
   display: none;
@@ -152,12 +195,15 @@ h1, h2, h3, h4, h5, h6 {
 */
 
 
+
+
 label {
-  
-  display: inline-block;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   padding: 5px 10px;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 25px;
   font-family: 'Oswald', sans-serif;
   width: 80%;
   margin: 0 auto;
@@ -171,6 +217,10 @@ input {
 
 .finished-screen {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
  .finish {

@@ -29,7 +29,7 @@
         </section>
         <div id="start-page">
             <h2 id="welcome">Welcome to your coding quiz</h2>
-            <p>This is a timed quiz which will begin once you press start. There are 5 questions for a total of 50 points. You have exactly 1 minute to complete this quiz. Time will be added for each correct answer and time will be deducted for each incorrect answer. Press Start whenever you are ready. Good luck!</p>
+            <p>This is a timed quiz which will begin once you press start. There are 5 questions for a total of 50 points. You have exactly 1 minute to complete this quiz. Time will be added for each correct answer and time will be deducted for each incorrect answer. Enter you name in the text field and press start whenever you are ready. Good luck!</p>
             <button class="start-button">Start</button>
         </div>
         <section class="section-2 hide">
@@ -97,7 +97,17 @@
         <div class="finished-screen hide">
             <h1 class="you-are-finished"></h1>
             <h2>Your final score is: <span class="final-score"></span></h2>
-            <h2>top score: <span class="top-score"></span></h2>
+            <form id="name-form">
+                <label id="namlabl" for="username">Name:</label>  
+                <input type="text" name="username"  id="thename" placeholder="Your Name">
+                <button type="button" class="name-button">Ok</button>
+            </form>
+            <form method="post">
+            <button type="submit" class="return-button">Return</button>
+            </form>
+
+            <h2 id="pasty">Past Scores:</h2>
+            <h2 id="scores-list"></h2>
         </div>
     </main>
     <footer>
