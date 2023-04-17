@@ -15,6 +15,8 @@ let rightOrWrong = document.querySelector(".rightOrWrongLabel");
 // checkanswer function 
 let score = 0;
 
+var nextQuestion = document.querySelector('#next-question-button');
+
 var nameButton = document.querySelector('.name-button');
 var addName = document.querySelector('#submitname');
 
@@ -27,11 +29,11 @@ var returnButton = document.querySelector('.return-button');
 //Starts quiz with start button and get the timer to set
 startQuiz.addEventListener("click", function () {
     topTimeDisplay.classList.remove('hide');
+
     var theTime = document.querySelector("#time");
     theTime.setAttribute("style", "display: flex; align-items: center;");
     var startScreen = document.querySelector("#start-page");
     startScreen.classList.add('hide');
-    tellUserResult.classList.add('hide');
     var quizBody = document.querySelector('#quiz-body');
     quizBody.classList.remove('hide');
     setTime();
@@ -59,28 +61,42 @@ function renderCurrentQuestion() {
     submitButton.addEventListener('click', validateAnswer);
 }
 
+
 function validateAnswer() {
     // check if right or wrong
     // based on validity add penalty
+
+ 
     let selected = document.querySelector('input[type="radio"]:checked'); 
-    tellUserResult.classList.remove('hide');
+
+    var currentQuestion = theQuestions[currentQuestionIndex];
+    var submitButton = currentQuestionIndex === 4 ? currentQuestion.querySelector('.submit-quiz') : currentQuestion.querySelector('.submitanswer');
+
+    submitButton.classList.add('hide');
     
+    let selectLabel = selected.parentElement;
+
     if (selected.value === 'correct') {
         secondsLeft += 10;
          score = score + 10;
-        tellUserResult.setAttribute("style", "background-color: green;");
-        rightOrWrong.textContent = 'Correct';
-  
-
+         selectLabel.setAttribute("style", "background-color: green;");
+       
     } else {
         secondsLeft -= 10;
-        tellUserResult.setAttribute("style", "background-color: red;");
-        rightOrWrong.textContent = 'Incorrect';
+        selectLabel.setAttribute("style", "background-color: red;");
+    
     }
-
-    // increase the currentQuestion index
+    
    
+    nextQuestion.classList.remove('hide');
+}
 
+nextQuestion.addEventListener("click", theNextQuestion);
+
+function theNextQuestion(){
+    
+    nextQuestion.classList.add('hide');
+    // increase the currentQuestion index
     if (currentQuestionIndex < 4) {
         currentQuestionIndex++;
 
@@ -93,9 +109,6 @@ function validateAnswer() {
 }
 
 
-
-
-
 function stopQuiz() {
    var scoresPage = document.querySelector('.finished-screen');
    var quizBody = document.querySelector('#quiz-body');
@@ -103,6 +116,7 @@ function stopQuiz() {
    topTimeDisplay.classList.add('hide');
     quizBody.classList.add('hide');
    scoresPage.classList.remove('hide');
+   nextQuestion.classList.add('hide');
    
    scoreDisplay.textContent = score;
 
@@ -120,7 +134,7 @@ function setTime() {
         secondsLeft--;
         timeEl.textContent = secondsLeft + " seconds left";
 
-        if (secondsLeft === 0) {
+        if (secondsLeft <= 0) {
             // Stops execution of action at set interval
             clearInterval(timer);
             // Calls function to create and append image
