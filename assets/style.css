@@ -101,9 +101,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
   }
 
-  #namlabl {
-    color: #096889;
-  }
+ 
  
 
   #pasty {
@@ -115,17 +113,31 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 20px;
   }
 
+  #namlabl {
+    display: none;
+  }
+
   .name-button {
     align-self: center;
-    width: 60px;
-    height: 25px;
+    width: 150px;
+    height: 38px;
     border-radius: 2px;
     border: none;
     background-color: #096889;
     color: white;
   }
 
-  .return-button {
+  .name-button:hover {
+    background-color: #890968;
+  }
+
+
+  #thename {
+    height: 38px;
+    border: none;
+  }
+
+  .return-button {  
     width: 80%;
     height: 35px;
     border-radius: 2px;
@@ -178,17 +190,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   #next-question-button {
-    width: 40%;
+    width: 80%;
     height: 35px;
     border: none;
-    background-color: #e6e6e6;
-    color: black;
+    border-radius: 2px;
+    background-color: #00bc14;
+    color: white;
     margin-top: 20px;
-    
   }
 
   #next-question-button:hover {
-    background-color: #00bc14;
+    background-color: #890968;
   }
 
   
@@ -258,6 +270,10 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #e6e6e6;
+  width: 75%;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
  .finish {
