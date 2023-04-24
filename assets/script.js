@@ -40,6 +40,7 @@ startQuiz.addEventListener("click", function () {
 });
 
 
+//leaders.sort(function(a, b) { if (a.score < b.score) return 1; else return -1;})
 
 
 //make sure to account for if they press next without selecting an answer
@@ -82,7 +83,7 @@ function validateAnswer() {
        
     } else {
         secondsLeft -= 10;
-        selectLabel.setAttribute("style", "background-color: red;");
+        selectLabel.setAttribute("style", "background-color: red; color: white;");
     
     }
     
